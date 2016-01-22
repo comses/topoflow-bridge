@@ -1,6 +1,3 @@
-__all__ = []
-
-
 import sys
 import importlib
 import warnings
@@ -39,12 +36,16 @@ def import_topoflow_component(mod_name, cls_name):
             '.'.join(['topoflow', 'components', mod_name]))
     except ImportError:
         warnings.warn('unable to import {mod}'.format(mod=mod_name))
+        return None
     else:
         obj = topoflow_module.__dict__[cls_name]
         bmi_obj = bmi_factory(obj, name=mod_name)
         setattr(sys.modules[__name__], bmi_obj.__name__, bmi_obj)
-        __all__.append(bmi_obj.__name__)
+        return bmi_obj.__name__
 
 
+__all__ = []
 for name in TOPOFLOW_COMPONENTS:
-    import_topoflow_component(*name)
+    topoflow_cls_name = import_topoflow_component(*name)
+    if topoflow_cls_name is not None:
+        __all__.append(topoflow_cls_name)
