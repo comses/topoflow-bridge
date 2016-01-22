@@ -1,0 +1,109 @@
+groups:
+  Ks_0_group:
+  - Ks_0_ptype
+  - Ks_0_scalar
+  - Ks_0_file
+  Ks_1_group:
+  - Ks_1_ptype
+  - Ks_1_scalar
+  - Ks_1_file
+  Ks_2_group:
+  - Ks_2_ptype
+  - Ks_2_scalar
+  - Ks_2_file
+  d_freeze_group:
+  - d_freeze_ptype
+  - d_freeze_scalar
+  - d_freeze_file
+  d_thaw_group:
+  - d_thaw_ptype
+  - d_thaw_scalar
+  - d_thaw_file
+  elev_group:
+  - elev_ptype
+  - elev_scalar
+  - elev_file
+  h0_table_group:
+  - h0_table_ptype
+  - h0_table_scalar
+  - h0_table_file
+  qs_0_group:
+  - qs_0_ptype
+  - qs_0_scalar
+  - qs_0_file
+  qs_1_group:
+  - qs_1_ptype
+  - qs_1_scalar
+  - qs_1_file
+  qs_2_group:
+  - qs_2_ptype
+  - qs_2_scalar
+  - qs_2_file
+  th_0_group:
+  - th_0_ptype
+  - th_0_scalar
+  - th_0_file
+  th_1_group:
+  - th_1_ptype
+  - th_1_scalar
+  - th_1_file
+  th_2_group:
+  - th_2_ptype
+  - th_2_scalar
+  - th_2_file
+sections:
+- title: Run
+  members:
+  - run_duration
+  - dt
+  - rti_file
+  - pixel_file
+- title: Input
+  members:
+  - elev_ptype
+  - elev_scalar
+  - elev_file
+  - flow_grid_file
+  - h0_table_ptype
+  - h0_table_scalar
+  - h0_table_file
+  - d_freeze_ptype
+  - d_freeze_scalar
+  - d_freeze_file
+  - d_thaw_ptype
+  - d_thaw_scalar
+  - d_thaw_file
+- title: soil layer 0
+  members:
+  - th_0_ptype
+  - th_0_scalar
+  - th_0_file
+  - qs_0_ptype
+  - qs_0_scalar
+  - qs_0_file
+  - Ks_0_ptype
+  - Ks_0_scalar
+  - Ks_0_file
+- title: soil layer 1
+  members:
+  - th_1_ptype
+  - th_1_scalar
+  - th_1_file
+  - qs_1_ptype
+  - qs_1_scalar
+  - qs_1_file
+  - Ks_1_ptype
+  - Ks_1_scalar
+  - Ks_1_file
+- title: soil layer 2
+  members:
+  - th_2_ptype
+  - th_2_scalar
+  - th_2_file
+  - qs_2_ptype
+  - qs_2_scalar
+  - qs_2_file
+  - Ks_2_ptype
+  - Ks_2_scalar
+  - Ks_2_file
+

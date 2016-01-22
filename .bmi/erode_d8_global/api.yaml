@@ -1,0 +1,5 @@
+name: ErodeD8Global
+language: python
+package: topoflow_bridge
+class: ErodeD8Global
+

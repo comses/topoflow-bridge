@@ -1,0 +1,5 @@
+name: DiversionsFractionMethod
+language: python
+package: topoflow_bridge
+class: DiversionsFractionMethod
+

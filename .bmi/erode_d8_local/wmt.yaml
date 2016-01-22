@@ -1,0 +1,36 @@
+groups:
+  make_z0_group:
+  - make_z0_method
+  - z0_plane_dz_dx
+  - z0_plane_dz_dy
+  noise_group:
+  - noise_method
+  - noise_scale
+  - seed
+sections:
+- title: Run
+  members:
+  - run_duration
+  - CFL_factor
+  - pixel_file
+- title: Input
+  members:
+  - nx
+  - ny
+  - dx
+  - dy
+  - m
+  - n
+  - K
+  - p
+  - R
+  - U
+  - BLR
+  - make_z0_method
+  - z0_plane_dz_dx
+  - z0_plane_dz_dy
+  - noise_method
+  - noise_scale
+  - seed
+  - BC_method
+

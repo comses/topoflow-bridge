@@ -1,0 +1,5 @@
+name: InfilRichards1D
+language: python
+package: topoflow_bridge
+class: InfilRichards1D
+

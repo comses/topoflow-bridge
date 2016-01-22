@@ -1,0 +1,5 @@
+name: ChannelsKinematicWave
+language: python
+package: topoflow_bridge
+class: ChannelsKinematicWave
+

@@ -1,0 +1,5 @@
+name: ChannelsDiffusiveWave
+language: python
+package: topoflow_bridge
+class: ChannelsDiffusiveWave
+

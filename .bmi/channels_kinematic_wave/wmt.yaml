@@ -1,0 +1,49 @@
+groups:
+  angle_group:
+  - angle_ptype
+  - angle_scalar
+  - angle_file
+  d0_group:
+  - d0_ptype
+  - d0_scalar
+  - d0_file
+  roughness_group:
+  - roughness_ptype
+  - roughness_scalar
+  - roughness_file
+  sinu_group:
+  - sinu_ptype
+  - sinu_scalar
+  - sinu_file
+  width_group:
+  - width_ptype
+  - width_scalar
+  - width_file
+sections:
+- title: Run
+  members:
+  - run_duration
+  - dt
+  - rti_file
+  - pixel_file
+- title: Input
+  members:
+  - code_file
+  - slope_file
+  - roughness_option
+  - roughness_ptype
+  - roughness_scalar
+  - roughness_file
+  - width_ptype
+  - width_scalar
+  - width_file
+  - angle_ptype
+  - angle_scalar
+  - angle_file
+  - d0_ptype
+  - d0_scalar
+  - d0_file
+  - sinu_ptype
+  - sinu_scalar
+  - sinu_file
+

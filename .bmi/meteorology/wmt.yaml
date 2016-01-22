@@ -1,0 +1,130 @@
+groups:
+  Cp_air_group:
+  - Cp_air_ptype
+  - Cp_air_scalar
+  - Cp_air_file
+  P_group:
+  - P_ptype
+  - P_scalar
+  - P_file
+  RH_group:
+  - RH_ptype
+  - RH_scalar
+  - RH_file
+  T_air_group:
+  - T_air_ptype
+  - T_air_scalar
+  - T_air_file
+  T_surf_group:
+  - T_surf_ptype
+  - T_surf_scalar
+  - T_surf_file
+  albedo_group:
+  - albedo_ptype
+  - albedo_scalar
+  - albedo_file
+  canopy_factor_group:
+  - canopy_factor_ptype
+  - canopy_factor_scalar
+  - canopy_factor_file
+  cloud_factor_group:
+  - cloud_factor_ptype
+  - cloud_factor_scalar
+  - cloud_factor_file
+  dust_atten_group:
+  - dust_atten_ptype
+  - dust_atten_scalar
+  - dust_atten_file
+  em_surf_group:
+  - em_surf_ptype
+  - em_surf_scalar
+  - em_surf_file
+  p0_group:
+  - p0_ptype
+  - p0_scalar
+  - p0_file
+  rho_H2O_group:
+  - rho_H2O_ptype
+  - rho_H2O_scalar
+  - rho_H2O_file
+  rho_air_group:
+  - rho_air_ptype
+  - rho_air_scalar
+  - rho_air_file
+  uz_group:
+  - uz_ptype
+  - uz_scalar
+  - uz_file
+  z0_air_group:
+  - z0_air_ptype
+  - z0_air_scalar
+  - z0_air_file
+  z_group:
+  - z_ptype
+  - z_scalar
+  - z_file
+sections:
+- title: Run
+  members:
+  - run_duration
+  - dt
+  - rti_file
+  - pixel_file
+- title: Input
+  members:
+  - PRECIP_ONLY
+  - rho_H2O_ptype
+  - rho_H2O_scalar
+  - rho_H2O_file
+  - Cp_air_ptype
+  - Cp_air_scalar
+  - Cp_air_file
+  - rho_air_ptype
+  - rho_air_scalar
+  - rho_air_file
+  - P_ptype
+  - P_scalar
+  - P_file
+  - T_air_ptype
+  - T_air_scalar
+  - T_air_file
+  - T_surf_ptype
+  - T_surf_scalar
+  - T_surf_file
+  - RH_ptype
+  - RH_scalar
+  - RH_file
+  - p0_ptype
+  - p0_scalar
+  - p0_file
+  - z_ptype
+  - z_scalar
+  - z_file
+  - uz_ptype
+  - uz_scalar
+  - uz_file
+  - z0_air_ptype
+  - z0_air_scalar
+  - z0_air_file
+  - albedo_ptype
+  - albedo_scalar
+  - albedo_file
+  - em_surf_ptype
+  - em_surf_scalar
+  - em_surf_file
+  - dust_atten_ptype
+  - dust_atten_scalar
+  - dust_atten_file
+  - cloud_factor_ptype
+  - cloud_factor_scalar
+  - cloud_factor_file
+  - canopy_factor_ptype
+  - canopy_factor_scalar
+  - canopy_factor_file
+  - slope_grid_file
+  - aspect_grid_file
+  - GMT_offset
+  - start_month
+  - start_day
+  - start_hour
+

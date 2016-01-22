@@ -1,0 +1,5 @@
+name: ChannelsDynamicWave
+language: python
+package: topoflow_bridge
+class: ChannelsDynamicWave
+

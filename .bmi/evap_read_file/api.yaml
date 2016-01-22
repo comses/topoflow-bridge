@@ -1,0 +1,5 @@
+name: EvapReadFile
+language: python
+package: topoflow_bridge
+class: EvapReadFile
+

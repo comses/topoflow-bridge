@@ -1,0 +1,14 @@
+groups: {}
+sections:
+- title: Run
+  members:
+  - run_duration
+  - dt
+  - rti_file
+  - pixel_file
+- title: Input
+  members:
+  - source_file
+  - sink_file
+  - canal_file
+

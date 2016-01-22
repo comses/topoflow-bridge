@@ -1,0 +1,39 @@
+groups:
+  K_soil_group:
+  - K_soil_ptype
+  - K_soil_scalar
+  - K_soil_file
+  T_soil_x_group:
+  - T_soil_x_ptype
+  - T_soil_x_scalar
+  - T_soil_x_file
+  alpha_group:
+  - alpha_ptype
+  - alpha_scalar
+  - alpha_file
+  soil_x_group:
+  - soil_x_ptype
+  - soil_x_scalar
+  - soil_x_file
+sections:
+- title: Run
+  members:
+  - run_duration
+  - dt
+  - rti_file
+  - pixel_file
+- title: Input
+  members:
+  - alpha_ptype
+  - alpha_scalar
+  - alpha_file
+  - K_soil_ptype
+  - K_soil_scalar
+  - K_soil_file
+  - soil_x_ptype
+  - soil_x_scalar
+  - soil_x_file
+  - T_soil_x_ptype
+  - T_soil_x_scalar
+  - T_soil_x_file
+

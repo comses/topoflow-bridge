@@ -1,0 +1,214 @@
+groups:
+  Ki_val_0_group:
+  - Ki_val_0_ptype
+  - Ki_val_0_scalar
+  - Ki_val_0_file
+  Ki_val_1_group:
+  - Ki_val_1_ptype
+  - Ki_val_1_scalar
+  - Ki_val_1_file
+  Ki_val_2_group:
+  - Ki_val_2_ptype
+  - Ki_val_2_scalar
+  - Ki_val_2_file
+  Ks_val_0_group:
+  - Ks_val_0_ptype
+  - Ks_val_0_scalar
+  - Ks_val_0_file
+  Ks_val_1_group:
+  - Ks_val_1_ptype
+  - Ks_val_1_scalar
+  - Ks_val_1_file
+  Ks_val_2_group:
+  - Ks_val_2_ptype
+  - Ks_val_2_scalar
+  - Ks_val_2_file
+  c_val_0_group:
+  - c_val_0_ptype
+  - c_val_0_scalar
+  - c_val_0_file
+  c_val_1_group:
+  - c_val_1_ptype
+  - c_val_1_scalar
+  - c_val_1_file
+  c_val_2_group:
+  - c_val_2_ptype
+  - c_val_2_scalar
+  - c_val_2_file
+  lam_val_0_group:
+  - lam_val_0_ptype
+  - lam_val_0_scalar
+  - lam_val_0_file
+  lam_val_1_group:
+  - lam_val_1_ptype
+  - lam_val_1_scalar
+  - lam_val_1_file
+  lam_val_2_group:
+  - lam_val_2_ptype
+  - lam_val_2_scalar
+  - lam_val_2_file
+  pA_val_0_group:
+  - pA_val_0_ptype
+  - pA_val_0_scalar
+  - pA_val_0_file
+  pA_val_1_group:
+  - pA_val_1_ptype
+  - pA_val_1_scalar
+  - pA_val_1_file
+  pA_val_2_group:
+  - pA_val_2_ptype
+  - pA_val_2_scalar
+  - pA_val_2_file
+  pB_val_0_group:
+  - pB_val_0_ptype
+  - pB_val_0_scalar
+  - pB_val_0_file
+  pB_val_1_group:
+  - pB_val_1_ptype
+  - pB_val_1_scalar
+  - pB_val_1_file
+  pB_val_2_group:
+  - pB_val_2_ptype
+  - pB_val_2_scalar
+  - pB_val_2_file
+  qi_val_0_group:
+  - qi_val_0_ptype
+  - qi_val_0_scalar
+  - qi_val_0_file
+  qi_val_1_group:
+  - qi_val_1_ptype
+  - qi_val_1_scalar
+  - qi_val_1_file
+  qi_val_2_group:
+  - qi_val_2_ptype
+  - qi_val_2_scalar
+  - qi_val_2_file
+  qr_val_0_group:
+  - qr_val_0_ptype
+  - qr_val_0_scalar
+  - qr_val_0_file
+  qr_val_1_group:
+  - qr_val_1_ptype
+  - qr_val_1_scalar
+  - qr_val_1_file
+  qr_val_2_group:
+  - qr_val_2_ptype
+  - qr_val_2_scalar
+  - qr_val_2_file
+  qs_val_0_group:
+  - qs_val_0_ptype
+  - qs_val_0_scalar
+  - qs_val_0_file
+  qs_val_1_group:
+  - qs_val_1_ptype
+  - qs_val_1_scalar
+  - qs_val_1_file
+  qs_val_2_group:
+  - qs_val_2_ptype
+  - qs_val_2_scalar
+  - qs_val_2_file
+sections:
+- title: Run
+  members:
+  - run_duration
+  - n_layers
+  - dt
+  - rti_file
+  - pixel_file
+- title: soil layer 0
+  members:
+  - Ks_val_0_ptype
+  - Ks_val_0_scalar
+  - Ks_val_0_file
+  - Ki_val_0_ptype
+  - Ki_val_0_scalar
+  - Ki_val_0_file
+  - qs_val_0_ptype
+  - qs_val_0_scalar
+  - qs_val_0_file
+  - qi_val_0_ptype
+  - qi_val_0_scalar
+  - qi_val_0_file
+  - qr_val_0_ptype
+  - qr_val_0_scalar
+  - qr_val_0_file
+  - pB_val_0_ptype
+  - pB_val_0_scalar
+  - pB_val_0_file
+  - pA_val_0_ptype
+  - pA_val_0_scalar
+  - pA_val_0_file
+  - lam_val_0_ptype
+  - lam_val_0_scalar
+  - lam_val_0_file
+  - c_val_0_ptype
+  - c_val_0_scalar
+  - c_val_0_file
+  - dz_val_0
+  - nz_val_0
+  - type_of_soil_layer_0
+- title: soil layer 1
+  members:
+  - Ks_val_1_ptype
+  - Ks_val_1_scalar
+  - Ks_val_1_file
+  - Ki_val_1_ptype
+  - Ki_val_1_scalar
+  - Ki_val_1_file
+  - qs_val_1_ptype
+  - qs_val_1_scalar
+  - qs_val_1_file
+  - qi_val_1_ptype
+  - qi_val_1_scalar
+  - qi_val_1_file
+  - qr_val_1_ptype
+  - qr_val_1_scalar
+  - qr_val_1_file
+  - pB_val_1_ptype
+  - pB_val_1_scalar
+  - pB_val_1_file
+  - pA_val_1_ptype
+  - pA_val_1_scalar
+  - pA_val_1_file
+  - lam_val_1_ptype
+  - lam_val_1_scalar
+  - lam_val_1_file
+  - c_val_1_ptype
+  - c_val_1_scalar
+  - c_val_1_file
+  - dz_val_1
+  - nz_val_1
+  - type_of_soil_layer_1
+- title: soil layer 2
+  members:
+  - Ks_val_2_ptype
+  - Ks_val_2_scalar
+  - Ks_val_2_file
+  - Ki_val_2_ptype
+  - Ki_val_2_scalar
+  - Ki_val_2_file
+  - qs_val_2_ptype
+  - qs_val_2_scalar
+  - qs_val_2_file
+  - qi_val_2_ptype
+  - qi_val_2_scalar
+  - qi_val_2_file
+  - qr_val_2_ptype
+  - qr_val_2_scalar
+  - qr_val_2_file
+  - pB_val_2_ptype
+  - pB_val_2_scalar
+  - pB_val_2_file
+  - pA_val_2_ptype
+  - pA_val_2_scalar
+  - pA_val_2_file
+  - lam_val_2_ptype
+  - lam_val_2_scalar
+  - lam_val_2_file
+  - c_val_2_ptype
+  - c_val_2_scalar
+  - c_val_2_file
+  - dz_val_2
+  - nz_val_2
+  - type_of_soil_layer_2
+
