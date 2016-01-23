@@ -5,7 +5,6 @@ bmi_paths:
   - .bmi/d8_global
   - .bmi/d8_local
   - .bmi/diversions_fraction_method
-  - .bmi/diversions_standard
   - .bmi/erode_d8_global
   - .bmi/erode_d8_local
   - .bmi/evap_energy_balance
@@ -13,7 +12,7 @@ bmi_paths:
   - .bmi/evap_read_file
   - .bmi/infil_beven
   - .bmi/infil_green_ampt
-  - .bmi/infil_richards_1d
+  - .bmi/infil_richards_1D
   - .bmi/infil_smith_parlange
   - .bmi/meteorology
   - .bmi/satzone_darcy_layers
