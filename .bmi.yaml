@@ -11,7 +11,6 @@ bmi_paths:
   - .bmi/evap_energy_balance
   - .bmi/evap_priestley_taylor
   - .bmi/evap_read_file
-  - .bmi/ice_gc2d
   - .bmi/infil_beven
   - .bmi/infil_green_ampt
   - .bmi/infil_richards_1d
@@ -20,7 +19,6 @@ bmi_paths:
   - .bmi/satzone_darcy_layers
   - .bmi/snow_degree_day
   - .bmi/snow_energy_balance
-  - .bmi/topoflow
 
 build:
   - python setup.py develop
