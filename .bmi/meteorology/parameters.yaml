@@ -61,7 +61,7 @@ rho_H2O_dtype:
     - long
     - string
     units: '-'
-rho_H2O_scalar:
+rho_H2O:
   description: Scalar value
   value:
     type: float
@@ -98,7 +98,7 @@ Cp_air_dtype:
     - long
     - string
     units: '-'
-Cp_air_scalar:
+Cp_air:
   description: Scalar value
   value:
     type: float
@@ -135,7 +135,7 @@ rho_air_dtype:
     - long
     - string
     units: '-'
-rho_air_scalar:
+rho_air:
   description: Scalar value
   value:
     type: float
@@ -172,7 +172,7 @@ P_dtype:
     - long
     - string
     units: '-'
-P_scalar:
+P:
   description: Scalar value
   value:
     type: float
@@ -209,7 +209,7 @@ T_air_dtype:
     - long
     - string
     units: '-'
-T_air_scalar:
+T_air:
   description: Scalar value
   value:
     type: float
@@ -246,7 +246,7 @@ T_surf_dtype:
     - long
     - string
     units: '-'
-T_surf_scalar:
+T_surf:
   description: Scalar value
   value:
     type: float
@@ -283,7 +283,7 @@ RH_dtype:
     - long
     - string
     units: '-'
-RH_scalar:
+RH:
   description: Scalar value
   value:
     type: float
@@ -320,7 +320,7 @@ p0_dtype:
     - long
     - string
     units: '-'
-p0_scalar:
+p0:
   description: Scalar value
   value:
     type: float
@@ -357,7 +357,7 @@ z_dtype:
     - long
     - string
     units: '-'
-z_scalar:
+z:
   description: Scalar value
   value:
     type: float
@@ -394,7 +394,7 @@ uz_dtype:
     - long
     - string
     units: '-'
-uz_scalar:
+uz:
   description: Scalar value
   value:
     type: float
@@ -431,7 +431,7 @@ z0_air_dtype:
     - long
     - string
     units: '-'
-z0_air_scalar:
+z0_air:
   description: Scalar value
   value:
     type: float
@@ -468,7 +468,7 @@ albedo_dtype:
     - long
     - string
     units: '-'
-albedo_scalar:
+albedo:
   description: Scalar value
   value:
     type: float
@@ -505,7 +505,7 @@ em_surf_dtype:
     - long
     - string
     units: '-'
-em_surf_scalar:
+em_surf:
   description: Scalar value
   value:
     type: float
@@ -542,7 +542,7 @@ dust_atten_dtype:
     - long
     - string
     units: '-'
-dust_atten_scalar:
+dust_atten:
   description: Scalar value
   value:
     type: float
@@ -579,7 +579,7 @@ cloud_factor_dtype:
     - long
     - string
     units: '-'
-cloud_factor_scalar:
+cloud_factor:
   description: Scalar value
   value:
     type: float
@@ -616,7 +616,7 @@ canopy_factor_dtype:
     - long
     - string
     units: '-'
-canopy_factor_scalar:
+canopy_factor:
   description: Scalar value
   value:
     type: float
