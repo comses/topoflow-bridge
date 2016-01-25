@@ -1,3 +1,25 @@
+ignore:
+  - '*_dtype'
+  - n_steps
+  - site_prefix
+  - case_prefix
+extras:
+  run_duration:
+    description: Simulation run time
+    value:
+      type: int
+      default: 3600
+      range:
+        min: 1
+        max: 3153600000
+      units: s
+  rti_file:
+    description: RiverTools info file
+    value:
+      type: file
+      default: default.rti
+      files:
+      - default.rti
 groups:
   Cp_air_group:
   - Cp_air_ptype
@@ -127,4 +149,3 @@ sections:
   - start_month
   - start_day
   - start_hour
-
