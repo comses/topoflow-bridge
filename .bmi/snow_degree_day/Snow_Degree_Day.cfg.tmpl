@@ -10,15 +10,15 @@ case_prefix         | {case_prefix}       | string    | File prefix for the mode
 n_steps             | {n_steps}           | long      | Number of time steps [-]
 dt                  | {dt}                | float     | Timestep for snowmelt process [sec]
 rho_snow_type       | {rho_snow_ptype}     | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-rho_snow            | {rho_snow}          | float     | Density of snow [kg/m^3]
+rho_snow            | {rho_snow}          | {rho_snow_dtype}     | Density of snow [kg/m^3]
 c0_type             | {c0_ptype}           | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-c0                  | {c0}                | float     | Degree-day coefficient [mm/day/degC]
+c0                  | {c0}                | {c0_dtype}     | Degree-day coefficient [mm/day/degC]
 T0_type             | {T0_ptype}           | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-T0                  | {T0}                | float     | Reference temperature [degC]
+T0                  | {T0}                | {T0_dtype}     | Reference temperature [degC]
 h0_snow_type        | {h0_snow_ptype}      | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-h0_snow             | {h0_snow}           | float     | Depth of snow [m]
+h0_snow             | {h0_snow}           | {h0_snow_dtype}     | Depth of snow [m]
 h0_swe_type         | {h0_swe_ptype}       | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-h0_swe              | {h0_swe}            | float     | Depth of snow water equivalent (swe) [m]
+h0_swe              | {h0_swe}            | {h0_swe_dtype}     | Depth of snow water equivalent (swe) [m]
 #===============================================================================
 # Output 1
 save_grid_dt        | {save_grid_dt}      | float     | Time interval between saved grids [sec]
