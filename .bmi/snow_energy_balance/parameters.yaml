@@ -1,12 +1,24 @@
-run_duration:
-  description: Simulation run time
+site_prefix:
+  description: File prefix for the study site
+  value:
+    type: string
+    default: 'site'
+    units: '-'
+case_prefix:
+  description: File prefix for the model scenario
+  value:
+    type: string
+    default: 'case'
+    units: '-'
+n_steps:
+  description: Number of time steps
   value:
     type: int
-    default: 3600
+    default: 100
     range:
-      min: 0
-      max: 3153600000
-    units: s
+      min: 1
+      max: 100000
+    units: '-'
 dt:
   description: Model time step
   value:
@@ -16,13 +28,6 @@ dt:
       min: 1
       max: 31536000
     units: s
-rti_file:
-  description: RiverTools info file
-  value:
-    type: file
-    default: default.rti
-    files:
-    - default.rti
 pixel_file:
   description: Monitored pixel/grid file (outlets)
   value:
@@ -41,7 +46,18 @@ rho_snow_ptype:
     - Time_Series
     - Grid_Sequence
     units: kg m-3
-rho_snow_scalar:
+rho_snow_dtype:
+  description: Density of snow data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+rho_snow:
   description: Scalar value
   value:
     type: float
@@ -67,7 +83,18 @@ c0_ptype:
     - Time_Series
     - Grid_Sequence
     units: mm d-1 degC-1
-c0_scalar:
+c0_dtype:
+  description: Degree day coefficient data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+c0:
   description: Scalar value
   value:
     type: float
@@ -93,7 +120,18 @@ T0_ptype:
     - Time_Series
     - Grid_Sequence
     units: degC
-T0_scalar:
+T0_dtype:
+  description: Reference temperature data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+T0:
   description: Scalar value
   value:
     type: float
@@ -119,7 +157,18 @@ h0_snow_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
-h0_snow_scalar:
+h0_snow_dtype:
+  description: Depth of snow data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+h0_snow:
   description: Scalar value
   value:
     type: float
@@ -145,7 +194,18 @@ h0_swe_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
-h0_swe_scalar:
+h0_swe_dtype:
+  description: Depth of snow water equivalent (SWE) snow data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+h0_swe:
   description: Scalar value
   value:
     type: float
