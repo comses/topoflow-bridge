@@ -50,6 +50,17 @@ rho_H2O_ptype:
     - Time_Series
     - Grid_Sequence
     units: kg m-3
+rho_H2O_dtype:
+  description: Density of water data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 rho_H2O_scalar:
   description: Scalar value
   value:
@@ -76,6 +87,17 @@ Cp_air_ptype:
     - Time_Series
     - Grid_Sequence
     units: J kg-1 K-1
+Cp_air_dtype:
+  description: Heat capacity of air data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 Cp_air_scalar:
   description: Scalar value
   value:
@@ -102,6 +124,17 @@ rho_air_ptype:
     - Time_Series
     - Grid_Sequence
     units: kg m-3
+rho_air_dtype:
+  description: Density of air data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 rho_air_scalar:
   description: Scalar value
   value:
@@ -128,6 +161,17 @@ P_ptype:
     - Time_Series
     - Grid_Sequence
     units: mm hr-1
+P_dtype:
+  description: Precipitation rate data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 P_scalar:
   description: Scalar value
   value:
@@ -154,6 +198,17 @@ T_air_ptype:
     - Time_Series
     - Grid_Sequence
     units: degC
+T_air_dtype:
+  description: Temperature of air data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 T_air_scalar:
   description: Scalar value
   value:
@@ -180,6 +235,17 @@ T_surf_ptype:
     - Time_Series
     - Grid_Sequence
     units: degC
+T_surf_dtype:
+  description: Temperature at surface data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 T_surf_scalar:
   description: Scalar value
   value:
@@ -205,6 +271,17 @@ RH_ptype:
     - Grid
     - Time_Series
     - Grid_Sequence
+    units: '-'
+RH_dtype:
+  description: Relative humidity data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
     units: '-'
 RH_scalar:
   description: Scalar value
@@ -232,6 +309,17 @@ p0_ptype:
     - Time_Series
     - Grid_Sequence
     units: mbar
+p0_dtype:
+  description: Atmospheric pressure data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 p0_scalar:
   description: Scalar value
   value:
@@ -258,6 +346,17 @@ z_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
+z_dtype:
+  description: Wind reference height data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 z_scalar:
   description: Scalar value
   value:
@@ -284,6 +383,17 @@ uz_ptype:
     - Time_Series
     - Grid_Sequence
     units: m s-1
+uz_dtype:
+  description: Wind velocity at reference height data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 uz_scalar:
   description: Scalar value
   value:
@@ -310,6 +420,17 @@ z0_air_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
+z0_air_dtype:
+  description: Surface roughness length scale for wind data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 z0_air_scalar:
   description: Scalar value
   value:
@@ -335,6 +456,17 @@ albedo_ptype:
     - Grid
     - Time_Series
     - Grid_Sequence
+    units: '-'
+albedo_dtype:
+  description: Surface albedo data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
     units: '-'
 albedo_scalar:
   description: Scalar value
@@ -362,6 +494,17 @@ em_surf_ptype:
     - Time_Series
     - Grid_Sequence
     units: '-'
+em_surf_dtype:
+  description: Surface emissivity data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 em_surf_scalar:
   description: Scalar value
   value:
@@ -387,6 +530,17 @@ dust_atten_ptype:
     - Grid
     - Time_Series
     - Grid_Sequence
+    units: '-'
+dust_atten_dtype:
+  description: Dust attenuation factor data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
     units: '-'
 dust_atten_scalar:
   description: Scalar value
@@ -414,6 +568,17 @@ cloud_factor_ptype:
     - Time_Series
     - Grid_Sequence
     units: '-'
+cloud_factor_dtype:
+  description: Cloudiness factor data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
 cloud_factor_scalar:
   description: Scalar value
   value:
@@ -439,6 +604,17 @@ canopy_factor_ptype:
     - Grid
     - Time_Series
     - Grid_Sequence
+    units: '-'
+canopy_factor_dtype:
+  description: Canopy coverage factor data type
+  value:
+    type: choice
+    default: Scalar
+    choices:
+    - float
+    - int
+    - long
+    - string
     units: '-'
 canopy_factor_scalar:
   description: Scalar value
