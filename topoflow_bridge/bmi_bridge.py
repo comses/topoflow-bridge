@@ -224,7 +224,7 @@ def bmi_factory(cls, name=None):
             int
                 Grid id for the variable.
             """
-            val = self.get_value(var)
+            val = self._get_value(var)
             if val.ndim == 0 or (val.ndim == 1 and val.size == 1):
                 return 0
             else:
@@ -245,7 +245,7 @@ def bmi_factory(cls, name=None):
             int
                 Size of each item in the variables's array.
             """
-            val = self.get_value(var)
+            val = self._get_value(var)
             return val.itemsize
 
         def get_var_units(self, var):
@@ -277,7 +277,7 @@ def bmi_factory(cls, name=None):
             int
                 Number of dimensions of a variable.
             """
-            val = self.get_value(var)
+            val = self._get_value(var)
             if val.ndim == 0 or (val.ndim == 1 and val.size == 1):
                 return 0
             else:
@@ -297,10 +297,10 @@ def bmi_factory(cls, name=None):
             str
                 Data type for the variable as a `numpy.dtype` string.
             """
-            val = self.get_value(var)
+            val = self._get_value(var)
             return val.dtype
 
-        def get_value_ptr(self, var):
+        def _get_value_ptr(self, var):
             """Get a reference to a variable's data.
 
             Parameters
@@ -331,7 +331,30 @@ def bmi_factory(cls, name=None):
                             var=var))
                 return val
 
-        def get_value(self, var):
+        def get_value_ptr(self, var):
+            """Get a reference to a variable's data.
+
+            Parameters
+            ----------
+            var : str
+                Standard Name of variable.
+
+            Returns
+            -------
+            ndarray
+                Numpy array that points to a variables's data.
+
+            Raises
+            ------
+            NotImplementedError
+                If a reference is unavailable for the given variable.
+            """
+            if var not in self.get_output_var_names():
+                raise KeyError('{name} not an output item'.format(name=var))
+
+            return self._get_value_ptr(var)
+
+        def _get_value(self, var):
             """Get a copy of a variable's data.
 
             Parameters
@@ -345,10 +368,27 @@ def bmi_factory(cls, name=None):
                 Numpy array of a variables's data.
             """
             try:
-                return self.get_value_ptr(var).copy().reshape((-1, ))
+                return self._get_value_ptr(var).copy().reshape((-1, ))
             except NotImplementedError:
                 topoflow_name = self._base.get_var_name(var)
                 return np.array(getattr(self._base, topoflow_name))
+
+        def get_value(self, var):
+            """Get a copy of a variable's data.
+
+            Parameters
+            ----------
+            var : str
+                Standard Name of variable.
+
+            Returns
+            -------
+            ndarray
+                Numpy array of a variables's data.
+            """
+            if var not in self.get_output_var_names():
+                raise KeyError('{name} not an output item'.format(name=var))
+            return self._get_value(var)
 
         def set_value(self, var, value):
             """Set the values of a variable.
@@ -360,6 +400,9 @@ def bmi_factory(cls, name=None):
             values : ndarray
                 New values for the variable.
             """
+            if var not in self.get_input_var_names():
+                raise KeyError('{name} not an input item'.format(name=var))
+
             topoflow_name = self._base.get_var_name(var)
             try:
                 topoflow_var = getattr(self._base, topoflow_name)
