@@ -59,7 +59,7 @@ rho_H2O_dtype:
   description: Density of water data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -96,7 +96,7 @@ Cp_air_dtype:
   description: Heat capacity of air data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -133,7 +133,7 @@ rho_air_dtype:
   description: Density of air data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -170,7 +170,7 @@ P_dtype:
   description: Precipitation rate data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -207,7 +207,7 @@ T_air_dtype:
   description: Temperature of air data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -244,7 +244,7 @@ T_surf_dtype:
   description: Temperature at surface data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -281,7 +281,7 @@ RH_dtype:
   description: Relative humidity data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -318,7 +318,7 @@ p0_dtype:
   description: Atmospheric pressure data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -355,7 +355,7 @@ z_dtype:
   description: Wind reference height data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -392,7 +392,7 @@ uz_dtype:
   description: Wind velocity at reference height data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -429,7 +429,7 @@ z0_air_dtype:
   description: Surface roughness length scale for wind data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -466,7 +466,7 @@ albedo_dtype:
   description: Surface albedo data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -503,7 +503,7 @@ em_surf_dtype:
   description: Surface emissivity data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -540,7 +540,7 @@ dust_atten_dtype:
   description: Dust attenuation factor data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -577,7 +577,7 @@ cloud_factor_dtype:
   description: Cloudiness factor data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -614,7 +614,7 @@ canopy_factor_dtype:
   description: Canopy coverage factor data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int

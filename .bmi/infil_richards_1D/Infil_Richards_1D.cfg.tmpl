@@ -8,7 +8,7 @@ out_directory       | .		          | string    | Output directory [-]
 site_prefix         | {site_prefix}       | string    | File prefix for the study site [-]
 case_prefix         | {case_prefix}       | string    | File prefix for the model scenario [-]
 n_steps             | {n_steps}           | long      | Number of time steps [-]
-n_layers            | {n_layers}          | int       | Number of soil layers [-]
+n_layers            | 3          | int       | Number of soil layers [-]
 dt                  | {dt}                | float     | Timestep for infiltration process [sec]
 #===============================================================================
 # Layer 1
@@ -32,7 +32,7 @@ c_val_type[0]        | {c_val_0_ptype}          | string    | Allowed input type
 c_val[0]             | {c_val_0}               | float     | Trans. brooks-corey curvature [-]
 dz_val[0]            | {dz_val_0}              | float     | Vertical distance between nodes [m]
 nz_val[0]            | {nz_val_0}     	       | int       | Number of vertical nodes in layer [-]
-soil_type[0]         | {soil_0_ptype}           | string    | Closest standard soil type [-] {sand; loamy_sand; sandy_loam; silty_loam; loam; sandy_clay_loam; silty_clay_loam; clay_loam; sandy_clay; silty_clay; clay}
+soil_type[0]         | {soil_0_type}           | string    | Closest standard soil type [-] {sand; loamy_sand; sandy_loam; silty_loam; loam; sandy_clay_loam; silty_clay_loam; clay_loam; sandy_clay; silty_clay; clay}
 #===============================================================================
 # Layer 2
 Ks_val_type[1]       | {Ks_val_1_ptype}         | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
@@ -55,7 +55,7 @@ c_val_type[1]        | {c_val_1_ptype}          | string    | Allowed input type
 c_val[1]             | {c_val_1}               | float     | Trans. brooks-corey curvature [-]
 dz_val[1]            | {dz_val_1}              | float     | Vertical distance between nodes [m]
 nz_val[1]            | {nz_val_1}     	       | int       | Number of vertical nodes in layer [-]
-soil_type[1]         | {soil_1_ptype}           | string    | Closest standard soil type [-] {sand; loamy_sand; sandy_loam; silty_loam; loam; sandy_clay_loam; silty_clay_loam; clay_loam; sandy_clay; silty_clay; clay}
+soil_type[1]         | {soil_1_type}           | string    | Closest standard soil type [-] {sand; loamy_sand; sandy_loam; silty_loam; loam; sandy_clay_loam; silty_clay_loam; clay_loam; sandy_clay; silty_clay; clay}
 #===============================================================================
 # Layer 3
 Ks_val_type[2]       | {Ks_val_2_ptype}         | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
@@ -78,7 +78,7 @@ c_val_type[2]        | {c_val_2_ptype}          | string    | Allowed input type
 c_val[2]             | {c_val_2}               | float     | Trans. brooks-corey curvature [-]
 dz_val[2]            | {dz_val_2}              | float     | Vertical distance between nodes [m]
 nz_val[2]            | {nz_val_2}              | int       | Number of vertical nodes in layer [-]
-soil_type[2]         | {soil_2_ptype}           | string    | Closest standard soil type [-] {sand; loamy_sand; sandy_loam; silty_loam; loam; sandy_clay_loam; silty_clay_loam; clay_loam; sandy_clay; silty_clay; clay}
+soil_type[2]         | {soil_2_type}           | string    | Closest standard soil type [-] {sand; loamy_sand; sandy_loam; silty_loam; loam; sandy_clay_loam; silty_clay_loam; clay_loam; sandy_clay; silty_clay; clay}
 #==============================================================================
 # Output 1
 save_grid_dt        | {save_grid_dt}      | float     | Time interval between saved grids [sec]

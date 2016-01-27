@@ -1,12 +1,24 @@
-run_duration:
-  description: Simulation run time
+site_prefix:
+  description: File prefix for the study site
+  value:
+    type: string
+    default: 'site'
+    units: '-'
+case_prefix:
+  description: File prefix for the model scenario
+  value:
+    type: string
+    default: 'case'
+    units: '-'
+n_steps:
+  description: Number of time steps
   value:
     type: int
     default: 3600
     range:
       min: 1
       max: 3153600000
-    units: s
+    units: '-'
 dt:
   description: Model time step
   value:
@@ -16,13 +28,6 @@ dt:
       min: 1.0
       max: 31536000.0
     units: s
-rti_file:
-  description: RiverTools info file
-  value:
-    type: file
-    default: default.rti
-    files:
-    - default.rti
 pixel_file:
   description: Monitored pixel/grid file
   value:
@@ -41,7 +46,18 @@ elev_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
-elev_scalar:
+elev_dtype:
+  description: Land surface elevation data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+elev:
   description: Scalar value
   value:
     type: float
@@ -74,7 +90,18 @@ h0_table_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
-h0_table_scalar:
+h0_table_dtype:
+  description: Initial water table height data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+h0_table:
   description: Scalar value
   value:
     type: float
@@ -100,7 +127,18 @@ d_freeze_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
-d_freeze_scalar:
+d_freeze_dtype:
+  description: Freeze depth below surface data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+d_freeze:
   description: Scalar value
   value:
     type: float
@@ -126,7 +164,18 @@ d_thaw_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
-d_thaw_scalar:
+d_thaw_dtype:
+  description: Thaw depth below surface data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+d_thaw:
   description: Scalar value
   value:
     type: float
@@ -152,7 +201,18 @@ th_0_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
-th_0_scalar:
+th_0_dtype:
+  description: Soil layer thickness data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+th_0:
   description: Scalar value
   value:
     type: float
@@ -178,7 +238,18 @@ qs_0_ptype:
     - Time_Series
     - Grid_Sequence
     units: '-'
-qs_0_scalar:
+qs_0_dtype:
+  description: Saturated soil water content data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+qs_0:
   description: Scalar value
   value:
     type: float
@@ -204,7 +275,18 @@ Ks_0_ptype:
     - Time_Series
     - Grid_Sequence
     units: m s-1
-Ks_0_scalar:
+Ks_0_dtype:
+  description: Saturated hydraulic conductivity data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+Ks_0:
   description: Scalar value
   value:
     type: float
@@ -230,7 +312,18 @@ th_1_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
-th_1_scalar:
+th_1_dtype:
+  description: Soil layer thickness data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+th_1:
   description: Scalar value
   value:
     type: float
@@ -256,7 +349,18 @@ qs_1_ptype:
     - Time_Series
     - Grid_Sequence
     units: '-'
-qs_1_scalar:
+qs_1_dtype:
+  description: Saturated soil water content data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+qs_1:
   description: Scalar value
   value:
     type: float
@@ -282,7 +386,18 @@ Ks_1_ptype:
     - Time_Series
     - Grid_Sequence
     units: m s-1
-Ks_1_scalar:
+Ks_1_dtype:
+  description: Saturated hydraulic conductivity data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+Ks_1:
   description: Scalar value
   value:
     type: float
@@ -308,7 +423,18 @@ th_2_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
-th_2_scalar:
+th_2_dtype:
+  description: Soil layer thickness data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+th_2:
   description: Scalar value
   value:
     type: float
@@ -334,7 +460,18 @@ qs_2_ptype:
     - Time_Series
     - Grid_Sequence
     units: '-'
-qs_2_scalar:
+qs_2_dtype:
+  description: Saturated soil water content data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+qs_2:
   description: Scalar value
   value:
     type: float
@@ -360,7 +497,18 @@ Ks_2_ptype:
     - Time_Series
     - Grid_Sequence
     units: m s-1
-Ks_2_scalar:
+Ks_2_dtype:
+  description: Saturated hydraulic conductivity data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+Ks_2:
   description: Scalar value
   value:
     type: float

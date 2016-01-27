@@ -1,3 +1,24 @@
+ignore:
+  - site_prefix
+  - case_prefix
+  - n_steps
+extras:
+  run_duration:
+    description: Simulation run time
+    value:
+      type: int
+      default: 3600
+      range:
+        min: 0
+        max: 3153600000
+      units: s
+  rti_file:
+    description: RiverTools info file
+    value:
+      type: file
+      default: default.rti
+      files:
+      - default.rti
 groups: {}
 sections:
 - title: Run

@@ -8,7 +8,7 @@ out_directory       | .                   | string    | Output directory [-]
 site_prefix         | {site_prefix}       | string    | File prefix for the study site [-]
 case_prefix         | {case_prefix}       | string    | File prefix for the model scenario [-]
 n_steps             | {n_steps}           | long      | Number of time steps [-]
-n_layers            | {n_layers}          | int       | Number of soil layers [-]
+n_layers            | 3                   | int       | Number of soil layers [-]
 dt                  | {dt}                | float     | Timestep for subsurface flow [sec]
 elev_type           | {elev_ptype}         | string            | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
 elev                | {elev}              | {elev_dtype}     | Land surface elevation [m]
@@ -21,27 +21,27 @@ d_thaw              | {d_thaw}            | {d_thaw_dtype}   | Thaw depth below 
 #===============================================================================
 # Layer 1
 Ks_type[0]           | {Ks_0_ptype}         | string        | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-Ks[0]                | {Ks_0}              | {typeof_Ks_0} | Sat. hydraulic conductivity [m/s]
+Ks[0]                | {Ks_0}              | {Ks_0_dtype} | Sat. hydraulic conductivity [m/s]
 qs_type[0]           | {qs_0_ptype}         | string        | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-qs[0]                | {qs_0}              | {typeof_qs_0} | Sat. soil water content [-]
+qs[0]                | {qs_0}              | {qs_0_dtype} | Sat. soil water content [-]
 th_type[0]           | {th_0_ptype}         | string        | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-th[0]                | {th_0}              | {typeof_th_0} | Soil layer thickness [m]
+th[0]                | {th_0}              | {th_0_dtype} | Soil layer thickness [m]
 #===============================================================================
 # Layer 2
 Ks_type[1]           | {Ks_1_ptype}         | string        | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-Ks[1]                | {Ks_1}              | {typeof_Ks_1} | Sat. hydraulic conductivity [m/s]
+Ks[1]                | {Ks_1}              | {Ks_1_dtype} | Sat. hydraulic conductivity [m/s]
 qs_type[1]           | {qs_1_ptype}         | string        | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-qs[1]                | {qs_1}              | {typeof_qs_1} | Sat. soil water content [-]
+qs[1]                | {qs_1}              | {qs_1_dtype} | Sat. soil water content [-]
 th_type[1]           | {th_1_ptype}         | string        | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-th[1]                | {th_1}              | {typeof_th_1} | Soil layer thickness [m]
+th[1]                | {th_1}              | {th_1_dtype} | Soil layer thickness [m]
 #===============================================================================
 # Layer 3
 Ks_type[2]           | {Ks_2_ptype}         | string        | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-Ks[2]                | {Ks_2}              | {typeof_Ks_2} | Sat. hydraulic conductivity [m/s]
+Ks[2]                | {Ks_2}              | {Ks_2_dtype} | Sat. hydraulic conductivity [m/s]
 qs_type[2]           | {qs_2_ptype}         | string        | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-qs[2]                | {qs_2}              | {typeof_qs_2} | Sat. soil water content [-]
+qs[2]                | {qs_2}              | {qs_2_dtype} | Sat. soil water content [-]
 th_type[2]           | {th_2_ptype}         | string        | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
-th[2]                | {th_2}              | {typeof_th_2} | Soil layer thickness [m]
+th[2]                | {th_2}              | {th_2_dtype} | Soil layer thickness [m]
 #===============================================================================
 # Output
 save_grid_dt        | {save_grid_dt}      | float     | Time interval between saved grids [sec]

@@ -28,13 +28,6 @@ dt:
       min: 1
       max: 31536000
     units: s
-pixel_file:
-  description: Monitored pixel/grid file (outlets)
-  value:
-    type: file
-    default: 'off'
-    files:
-    - 'off'
 rho_snow_ptype:
   description: Density of snow
   value:
@@ -50,7 +43,7 @@ rho_snow_dtype:
   description: Density of snow data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -87,7 +80,7 @@ c0_dtype:
   description: Degree day coefficient data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -124,7 +117,7 @@ T0_dtype:
   description: Reference temperature data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -161,7 +154,7 @@ h0_snow_dtype:
   description: Depth of snow data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int
@@ -198,7 +191,7 @@ h0_swe_dtype:
   description: Depth of snow water equivalent (SWE) data type
   value:
     type: choice
-    default: Scalar
+    default: float
     choices:
     - float
     - int

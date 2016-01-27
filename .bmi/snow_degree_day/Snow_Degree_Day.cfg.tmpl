@@ -21,7 +21,7 @@ h0_swe_type         | {h0_swe_ptype}       | string    | Allowed input types [-]
 h0_swe              | {h0_swe}            | {h0_swe_dtype}     | Depth of snow water equivalent (swe) [m]
 #===============================================================================
 # Output 1
-save_grid_dt        | {save_grid_dt}      | float     | Time interval between saved grids [sec]
+save_grid_dt        | 600.0              | float     | Time interval between saved grids [sec]
 SAVE_MR_GRIDS       | No     | string    | Option to save grids of snow meltrate [-] {Yes; No}
 mr_gs_file          | {mr_gs_file}        | string    | Filename for grid stack of snow meltrate [m/s]
 SAVE_HS_GRIDS       | No     | string    | Option to save grids of snow depth [-] {Yes; No}
@@ -32,8 +32,8 @@ SAVE_CC_GRIDS       | No     | string    | Option to save grids of cold content 
 cc_gs_file          | {cc_gs_file}        | string    | Filename for grid stack of cold content [J/m^2]
 #===============================================================================
 # Output 2
-save_pixels_dt      | {save_pixels_dt}    | float     | Time interval between time series values [sec]
-pixel_file          | {pixel_file}        | string    | Filename for monitored pixel file [-]
+save_pixels_dt      | 600.0               | float     | Time interval between time series values [sec]
+pixel_file          | case_pixels.txt     | string    | Filename for monitored pixel file [-]
 SAVE_MR_PIXELS      | No    | string    | Option to save time series of snow meltrate [-] {Yes; No}
 mr_ts_file          | {mr_ts_file}        | string    | Filename for time series of [m/s]
 SAVE_HS_PIXELS      | No    | string    | Option to save time series of snow depth [-] {Yes; No}

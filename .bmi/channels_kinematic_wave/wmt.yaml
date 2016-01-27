@@ -1,3 +1,63 @@
+ignore:
+  - '*_dtype'
+  - site_prefix
+  - case_prefix
+  - n_steps
+  - MANNING
+  - LAW_OF_WALL
+  - 'nval*'
+  - 'z0val*'
+extras:
+  run_duration:
+    description: Simulation run time
+    value:
+      type: int
+      default: 3600
+      range:
+        min: 0
+        max: 3153600000
+      units: s
+  rti_file:
+    description: RiverTools info file
+    value:
+      type: file
+      default: default.rti
+      files:
+      - default.rti
+  roughness_option:
+    description: Roughness option
+    value:
+      type: choice
+      default: "Manning's formula"
+      choices:
+      - "Manning's formula"
+      - "Law of the wall"
+  roughness_ptype:
+    description: "Roughness value (Manning's <em>n</em> or roughness length <em>z<sub>0</sub></em>)"
+    value:
+      type: choice
+      default: Scalar
+      choices:
+      - Scalar
+      - Grid
+      - Time_Series
+      - Grid_Sequence
+      units: m-(1/3) s or m
+  roughness_scalar:
+    description: Scalar value
+    value:
+      type: float
+      default: 0.1
+      range:
+        min: 0.0
+        max: 5.0
+  roughness_file:
+    description: Grid, time series, or grid sequence file
+    value:
+      type: file
+      default: 'off'
+      files:
+      - 'off'
 groups:
   angle_group:
   - angle_ptype

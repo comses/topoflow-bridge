@@ -1,12 +1,24 @@
-run_duration:
-  description: Simulation run time
+site_prefix:
+  description: File prefix for the study site
+  value:
+    type: string
+    default: 'site'
+    units: '-'
+case_prefix:
+  description: File prefix for the model scenario
+  value:
+    type: string
+    default: 'case'
+    units: '-'
+n_steps:
+  description: Number of time steps
   value:
     type: int
     default: 3600
     range:
       min: 1
       max: 3153600000
-    units: s
+    units: '-'
 dt:
   description: Model time step
   value:
@@ -16,13 +28,6 @@ dt:
       min: 1
       max: 31536000.0
     units: s
-rti_file:
-  description: RiverTools info file
-  value:
-    type: file
-    default: default.rti
-    files:
-    - default.rti
 pixel_file:
   description: Monitored pixel/grid file (outlets)
   value:
@@ -41,7 +46,18 @@ Ks_0_ptype:
     - Time_Series
     - Grid_Sequence
     units: m s-1
-Ks_0_scalar:
+Ks_0_dtype:
+  description: Saturated hydraulic conductivity data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+Ks_0:
   description: Scalar value
   value:
     type: float
@@ -67,7 +83,18 @@ Ki_0_ptype:
     - Time_Series
     - Grid_Sequence
     units: m s-1
-Ki_0_scalar:
+Ki_0_dtype:
+  description: Initial hydraulic conductivity data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+Ki_0:
   description: Scalar value
   value:
     type: float
@@ -93,7 +120,18 @@ qs_0_ptype:
     - Time_Series
     - Grid_Sequence
     units: '-'
-qs_0_scalar:
+qs_0_dtype:
+  description: Saturated soil water content data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+qs_0:
   description: Scalar value
   value:
     type: float
@@ -119,7 +157,18 @@ qi_0_ptype:
     - Time_Series
     - Grid_Sequence
     units: '-'
-qi_0_scalar:
+qi_0_dtype:
+  description: Initial soil water content data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+qi_0:
   description: Scalar value
   value:
     type: float
@@ -145,7 +194,18 @@ G_0_ptype:
     - Time_Series
     - Grid_Sequence
     units: m
-G_0_scalar:
+G_0_dtype:
+  description: Capillary length scale data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+G_0:
   description: Scalar value
   value:
     type: float
@@ -171,7 +231,18 @@ gam_0_ptype:
     - Time_Series
     - Grid_Sequence
     units: '-'
-gam_0_scalar:
+gam_0_dtype:
+  description: Smith-Parlange parameter data type
+  value:
+    type: choice
+    default: float
+    choices:
+    - float
+    - int
+    - long
+    - string
+    units: '-'
+gam_0:
   description: Scalar value
   value:
     type: float
@@ -186,7 +257,7 @@ gam_0_file:
     default: 'off'
     files:
     - 'off'
-soil_ptype_0:
+soil_type_0:
   description: Closest standard soil type
   value:
     type: choice
@@ -204,4 +275,3 @@ soil_ptype_0:
     - Silty Clay
     - Clay
     units: '-'
-

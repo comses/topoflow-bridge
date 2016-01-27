@@ -20,6 +20,10 @@ extras:
       default: default.rti
       files:
       - default.rti
+globals:
+  - run_duration
+  - rti_file
+  - n_steps
 groups:
   Cp_air_group:
   - Cp_air_ptype

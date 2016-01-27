@@ -1,3 +1,15 @@
+ignore:
+  - n_steps
+extras:
+  run_duration:
+    description: Simulation run time
+    value:
+      type: int
+      default: 3600
+      range:
+        min: 0
+        max: 3153600000
+      units: s
 groups: {}
 sections:
 - title: Run
