@@ -194,7 +194,11 @@ def bmi_factory(cls, name=None):
             tuple of str
                 Name of input variables as Standard Names.
             """
-            return tuple(self._base.get_input_var_names())
+            names = tuple(self._base.get_input_var_names())
+            if len(names) == 1 and names[0] == 'None':
+                return ()
+            else:
+                return tuple(names)
 
         def get_output_var_names(self):
             """Get name of output variables.
@@ -208,7 +212,11 @@ def bmi_factory(cls, name=None):
             tuple of str
                 Name of output variables as Standard Names.
             """
-            return tuple(self._base.get_output_var_names())
+            names = self._base.get_output_var_names()
+            if len(names) == 1 and names[0] == 'None':
+                return ()
+            else:
+                return tuple(names)
 
         @memoize
         def get_var_grid(self, var):
