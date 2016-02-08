@@ -76,9 +76,9 @@ flow_grid_file:
   description: Grid file of D8 flow codes
   value:
     type: file
-    default: default_flow.rtg
+    default: site_flow.rtg
     files:
-    - default_flow.rtg
+    - site_flow.rtg
 h0_table_ptype:
   description: Initial water table height
   value:

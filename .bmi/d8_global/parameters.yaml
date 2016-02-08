@@ -39,9 +39,9 @@ DEM_file:
   description: RiverTools grid file containing DEM
   value:
     type: file
-    default: default_DEM.rtg
+    default: site_DEM.rtg
     files:
-    - default_DEM.rtg
+    - site_DEM.rtg
 A_units:
   description: Base unit for grid area
   value:

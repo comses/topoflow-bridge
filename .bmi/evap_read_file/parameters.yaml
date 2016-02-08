@@ -39,8 +39,8 @@ ET_file:
   description: Grid sequence file of evapotranspiration rates
   value:
     type: file
-    default: default_2D-ETrate.nc
+    default: site_2D-ETrate.nc
     files:
-    - default_2D-ETrate.nc
+    - site_2D-ETrate.nc
     units: mm hr-1
 

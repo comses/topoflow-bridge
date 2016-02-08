@@ -39,16 +39,16 @@ code_file:
   description: RiverTools grid file of D8 flow codes
   value:
     type: file
-    default: default_flow.rtg
+    default: site_flow.rtg
     files:
-    - default_flow.rtg
+    - site_flow.rtg
 slope_file:
   description: RiverTools grid file of D8 slopes
   value:
     type: file
-    default: default_slope.rtg
+    default: site_slope.rtg
     files:
-    - default_slope.rtg
+    - site_slope.rtg
 MANNING:
   description: Option to use mannings n for roughness
   value:
