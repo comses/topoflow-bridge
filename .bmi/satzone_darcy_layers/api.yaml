@@ -2,4 +2,5 @@ name: SatzoneDarcyLayers
 language: python
 package: topoflow_bridge
 class: SatzoneDarcyLayers
+initialize_args: "Satzone_Darcy_Layers.cfg"
 

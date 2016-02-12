@@ -2,4 +2,5 @@ name: ChannelsKinematicWave
 language: python
 package: topoflow_bridge
 class: ChannelsKinematicWave
+initialize_args: "Channels_Kinematic_Wave.cfg"
 

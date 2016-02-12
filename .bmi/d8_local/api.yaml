@@ -2,4 +2,5 @@ name: D8Local
 language: python
 package: topoflow_bridge
 class: D8Local
+initialize_args: "D8_Local.cfg"
 

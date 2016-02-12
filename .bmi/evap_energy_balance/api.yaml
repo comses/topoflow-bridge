@@ -2,4 +2,5 @@ name: EvapEnergyBalance
 language: python
 package: topoflow_bridge
 class: EvapEnergyBalance
+initialize_args: "Evap_Energy_Balance.cfg"
 

@@ -2,4 +2,5 @@ name: ChannelsDynamicWave
 language: python
 package: topoflow_bridge
 class: ChannelsDynamicWave
+initialize_args: "Channels_Dynamic_Wave.cfg"
 

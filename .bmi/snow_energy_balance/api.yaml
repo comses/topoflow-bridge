@@ -2,4 +2,5 @@ name: SnowEnergyBalance
 language: python
 package: topoflow_bridge
 class: SnowEnergyBalance
+initialize_args: "Snow_Energy_Balance.cfg"
 

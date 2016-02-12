@@ -2,4 +2,5 @@ name: EvapReadFile
 language: python
 package: topoflow_bridge
 class: EvapReadFile
+initialize_args: "Evap_Read_File.cfg"
 

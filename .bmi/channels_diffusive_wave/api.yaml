@@ -2,4 +2,5 @@ name: ChannelsDiffusiveWave
 language: python
 package: topoflow_bridge
 class: ChannelsDiffusiveWave
+initialize_args: "Channels_Diffusive_Wave.cfg"
 

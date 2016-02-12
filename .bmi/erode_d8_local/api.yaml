@@ -2,4 +2,5 @@ name: ErodeD8Local
 language: python
 package: topoflow_bridge
 class: ErodeD8Local
+initialize_args: "Erode_D8_Local.cfg"
 

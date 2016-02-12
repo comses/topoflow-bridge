@@ -2,4 +2,5 @@ name: Meteorology
 language: python
 package: topoflow_bridge
 class: MetBase
+initialize_args: "Meteorology.cfg"
 

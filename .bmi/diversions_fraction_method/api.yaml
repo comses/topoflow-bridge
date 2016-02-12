@@ -2,4 +2,5 @@ name: DiversionsFractionMethod
 language: python
 package: topoflow_bridge
 class: DiversionsFractionMethod
+initialize_args: "Diversions_Fraction_Method.cfg"
 

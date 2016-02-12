@@ -2,4 +2,5 @@ name: InfilBeven
 language: python
 package: topoflow_bridge
 class: InfilBeven
+initialize_args: "Infil_Beven.cfg"
 

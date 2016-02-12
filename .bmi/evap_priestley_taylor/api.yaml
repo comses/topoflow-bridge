@@ -2,4 +2,5 @@ name: EvapPriestleyTaylor
 language: python
 package: topoflow_bridge
 class: EvapPriestleyTaylor
+initialize_args: "Evap_Priestley_Taylor.cfg"
 

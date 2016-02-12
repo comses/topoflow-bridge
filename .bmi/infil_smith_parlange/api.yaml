@@ -2,4 +2,5 @@ name: InfilSmithParlange
 language: python
 package: topoflow_bridge
 class: InfilSmithParlange
+initialize_args: "Infil_Smith_Parlange.cfg"
 
