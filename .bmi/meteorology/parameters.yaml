@@ -640,16 +640,16 @@ slope_grid_file:
   description: Slope grid file (flat binary file, row-major grid, 4-byte values)
   value:
     type: file
-    default: site_slope.bin
+    default: site_slope.rtg
     files:
-    - site_slope.bin
+    - site_slope.rtg
 aspect_grid_file:
   description: Aspect grid file (flat binary file, row-major grid, 4-byte values)
   value:
     type: file
-    default: site_aspect.bin
+    default: site_aspect.rtg
     files:
-    - site_aspect.bin
+    - site_aspect.rtg
 GMT_offset:
   description: Time zone offset from GMT
   value:
