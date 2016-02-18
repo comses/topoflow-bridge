@@ -9,7 +9,9 @@ site_prefix         | {site_prefix}       | string    | File prefix for the stud
 case_prefix         | {case_prefix}       | string    | File prefix for the model scenario [-]
 n_steps             | {n_steps}           | long      | Number of time steps [-]
 dt                  | {dt}                | float     | Timestep for snowmelt process [sec]
-rho_snow_type       | {rho_snow_ptype}     | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
+Cp_snow_type        | Scalar              | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
+Cp_snow             | 2090.               | float     | Heat capacity of snow [J/kg/K]
+rho_snow_type       | {rho_snow_ptype}    | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
 rho_snow            | {rho_snow}          | {rho_snow_dtype}     | Density of snow [kg/m^3]
 c0_type             | {c0_ptype}           | string    | Allowed input types [-] {Scalar; Grid; Time_Series; Grid_Sequence}
 c0                  | {c0}                | {c0_dtype}     | Degree-day coefficient [mm/day/degC]
