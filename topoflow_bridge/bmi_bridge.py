@@ -1,7 +1,46 @@
+import os
 import functools
 import warnings
 
 import numpy as np
+import yaml
+
+
+def to_type(value, dtype):
+    if dtype == 'float':
+        return float(value)
+    elif dtype in ('long', 'int'):
+        return int(value)
+    elif dtype == 'string':
+        return str(value)
+    else:
+        raise ValueError('dtype not understood {dtype}'.format(dtype=dtype))
+
+
+def load_cfg(fname):
+    params = {}
+    with open(fname, 'r') as fp:
+        for line in fp:
+            try:
+                (key, value, dtype, _) = [v.strip() for v in line.split('|')]
+            except ValueError:
+                pass
+            else:
+                params[key] = to_type(value, dtype)
+    params['rti_file'] = params['site_prefix'] + '.rti'
+    return params
+
+
+def load_rti(fname):
+    lines = []
+    with open(fname, 'r') as fp:
+        for line in fp:
+            if ';' in line:
+                line = line[:line.find(';')]
+            if ':' in line:
+                lines.append(line)
+
+    return yaml.load(os.linesep.join(lines))
 
 
 def camel_case(name):
@@ -20,6 +59,47 @@ def memoize(func):
     return _wrapped
 
 
+def is_grid(val):
+    try:
+        return val.ndim == 2
+    except AttributeError:
+        return False
+
+
+def is_time_series(val):
+    try:
+        return val.ndim == 1
+    except AttributeError:
+        return False
+
+
+def is_scalar(val):
+    try:
+        return val.ndim == 0
+    except AttributeError:
+        return False
+
+
+def to_grid(val, shape):
+    if is_grid(val):
+        if val.shape == shape:
+            grid = val
+        else:
+            grid = np.zeros(shape, dtype=type(val))
+    elif is_time_series(val):
+        grid = val
+    elif is_scalar(val):
+        grid = np.full(shape, val, dtype=val.dtype)
+    else:
+        grid = np.full(shape, val, dtype=type(val))
+
+    return grid
+
+
+def is_scalar_attr(name):
+    return 'min_of' in name or 'max_of' in name or name.startswith('basin_outlet')
+
+
 _BMI_DOCSTRING = """{cls}()
 
 BMI wrapper for the TopoFlow {cls} component.
@@ -34,11 +114,7 @@ def bmi_factory(cls, name=None):
 
         def __init__(self):
             self._base = self._cls()
-
-        def _setup_grids(self):
-            for var in self.get_input_var_names():
-                ndim = self.get_var_rank(var)
-                # self._grid_rank
+            self._shape = None
 
         def get_component_name(self):
             """Get the name of the component.
@@ -125,8 +201,9 @@ def bmi_factory(cls, name=None):
                 If the grid is not structured.
             """
             if self.get_grid_type(grid) == 'uniform_rectilinear':
-                return tuple(
-                    (int(dim) for dim in self._base.get_grid_shape(grid)))
+                return self._shape
+                # return tuple(
+                #     (int(dim) for dim in self._base.get_grid_shape(grid)))
             else:
                 raise NotImplementedError(
                     'get_grid_shape not implemented for grid '
@@ -216,9 +293,11 @@ def bmi_factory(cls, name=None):
             if len(names) == 1 and names[0] == 'None':
                 return ()
             else:
+                if 'model__time_step' in names:
+                    names.remove('model__time_step')
                 return tuple(names)
 
-        @memoize
+        # @memoize
         def get_var_grid(self, var):
             """Get grid id for a variable.
 
@@ -239,7 +318,7 @@ def bmi_factory(cls, name=None):
                 return 2
                 # return val.ndim
 
-        @memoize
+        # @memoize
         def get_var_itemsize(self, var):
             """Get the item size for a variable.
 
@@ -271,7 +350,7 @@ def bmi_factory(cls, name=None):
             """
             return self._base.get_var_units(var)
 
-        @memoize
+        # @memoize
         def get_var_rank(self, var):
             """Get the number of dimension of a variable.
 
@@ -291,7 +370,7 @@ def bmi_factory(cls, name=None):
             else:
                 return 2
 
-        @memoize
+        # @memoize
         def get_var_type(self, var):
             """Get the data type of a variable.
 
@@ -330,7 +409,7 @@ def bmi_factory(cls, name=None):
             try:
                 val = getattr(self._base, topoflow_name)
             except AttributeError:
-                raise KeyError(var)
+                raise KeyError('{var}: {attr}'.format(var=var, attr=topoflow_name))
             else:
                 if not isinstance(val, np.ndarray):
                     # warnings.warn('type of {var} is {type}'.format(var=var, type=type(val)))
@@ -357,8 +436,8 @@ def bmi_factory(cls, name=None):
             NotImplementedError
                 If a reference is unavailable for the given variable.
             """
-            if var not in self.get_output_var_names():
-                raise KeyError('{name} not an output item'.format(name=var))
+            # if var not in self.get_output_var_names():
+            #     raise KeyError('{name} not an output item'.format(name=var))
 
             return self._get_value_ptr(var)
 
@@ -394,8 +473,8 @@ def bmi_factory(cls, name=None):
             ndarray
                 Numpy array of a variables's data.
             """
-            if var not in self.get_output_var_names():
-                raise KeyError('{name} not an output item'.format(name=var))
+            # if var not in self.get_output_var_names():
+            #     raise KeyError('{name} not an output item'.format(name=var))
             return self._get_value(var)
 
         def set_value(self, var, value):
@@ -415,15 +494,22 @@ def bmi_factory(cls, name=None):
             try:
                 topoflow_var = getattr(self._base, topoflow_name)
             except AttributeError:
-                setattr(self, topoflow_name, value.reshape((-1, )))
+                internal_shape = self.get_grid_shape(2)
+                setattr(self._base, topoflow_name, value.reshape(internal_shape))
             else:
                 try:
                     shape = topoflow_var.shape
                 except AttributeError:
-                    setattr(self, topoflow_name, value.reshape((-1, )))
+                    internal_shape = self.get_grid_shape(2)
+                    setattr(self._base, topoflow_name, value.reshape(internal_shape))
                 else:
-                    setattr(self, topoflow_name, value.reshape(shape))
-
+                    # topoflow_var[:] = value[:]
+                    setattr(self._base, topoflow_name, value.reshape(shape))
+                    # setattr(self, topoflow_name, value)  # dicey (@mdpiper)
+                    # gid = self._base.get_var_grid(var)
+                    # internal_shape = self._base.get_grid_shape(gid)
+                    # setattr(self._base, topoflow_name, value.reshape(internal_shape))
+                    
         def get_time_step(self):
             """Get model time step.
 
@@ -502,7 +588,29 @@ def bmi_factory(cls, name=None):
             fname : str
                 Name of input configuration file.
             """
-            return self._base.initialize(cfg_file=fname)
+            params = load_cfg(fname)
+            rti = load_rti(params['rti_file'])
+            shape = (rti['Number of rows'], rti['Number of columns'])
+            self._shape = shape
+            for name in self.get_input_var_names():
+                self.set_value(name, np.zeros(shape, dtype=float))
+
+            rtn = self._base.initialize(cfg_file=fname)
+
+            for name in self.get_output_var_names():
+                if not is_scalar_attr(name):
+                    attr = self._base.get_var_name(name)
+                    try:
+                        var = getattr(self._base, attr)
+                    except AttributeError:
+                        val = to_grid(0., shape)
+                    else:
+                        val = to_grid(var, shape)
+
+                    setattr(self._base, attr, val)
+
+
+            return rtn
 
         def update(self):
             """Update the model one time step.
@@ -522,6 +630,10 @@ def bmi_factory(cls, name=None):
                 Time to run model until.
             """
             n_steps = (then - self.get_current_time()) / self.get_time_step()
+            try:
+                n_steps = int(n_steps)
+            except TypeError:
+                print n_steps
             for _ in xrange(int(n_steps)):
                 self.update()
 
