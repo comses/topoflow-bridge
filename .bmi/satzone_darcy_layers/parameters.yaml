@@ -72,13 +72,6 @@ elev_file:
     default: 'off'
     files:
     - 'off'
-flow_grid_file:
-  description: Grid file of D8 flow codes
-  value:
-    type: file
-    default: site_flow.rtg
-    files:
-    - site_flow.rtg
 h0_table_ptype:
   description: Initial water table height
   value:
