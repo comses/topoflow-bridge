@@ -178,7 +178,7 @@ angle_ptype:
     - Grid_Sequence
     units: deg
 angle_dtype:
-  description:  Bed width of trapezoid cross-section data type
+  description: Bank angle of trapezoid cross-section data type
   value:
     type: choice
     default: float
