@@ -35,6 +35,13 @@ pixel_file:
     default: 'off'
     files:
     - 'off'
+DEM_file:
+  description: RiverTools grid file containing a DEM
+  value:
+    type: file
+    default: site_DEM.rtg
+    files:
+    - site_DEM.rtg
 code_file:
   description: RiverTools grid file of D8 flow codes
   value:
@@ -277,4 +284,43 @@ sinu_file:
     default: 'off'
     files:
     - 'off'
-
+A_units:
+  description: Base unit for grid area
+  value:
+    type: choice
+    default: meters
+    choices:
+    - meters
+    - kilometers
+LINK_FLATS:
+  description: Link flats?
+  value:
+    type: choice
+    default: 'Yes'
+    choices:
+    - 'Yes'
+    - 'No'
+FILL_PITS_IN_Z0:
+  description: Fill pits in original DEM?
+  value:
+    type: choice
+    default: 'No'
+    choices:
+    - 'Yes'
+    - 'No'
+LR_PERIODIC:
+  description: Use periodic left-right boundary conditions?
+  value:
+    type: choice
+    default: 'No'
+    choices:
+    - 'Yes'
+    - 'No'
+TB_PERIODIC:
+  description: Use periodic top-bottom boundary conditions?
+  value:
+    type: choice
+    default: 'No'
+    choices:
+    - 'Yes'
+    - 'No'
