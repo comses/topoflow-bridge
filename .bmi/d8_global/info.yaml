@@ -1,8 +1,15 @@
-author: 'Scott D. Peckham '
+author: Scott D. Peckham
 doi: 10.1594/IEDA/100174
 email: scott.peckham@colorado.edu
 license: Apache
-summary: The TopoFlow D8_Global component.
+summary: "The D8 algorithm is the most commonly used method for
+  approximating flow directions on a topographic surface. This method
+  tracks 'flow' from each point on a rectangular grid to one of its
+  eight neighbors. The D8 method is well-suited for the identification
+  of individual channels, channel networks, and basin boundaries.
+  However, it does not fare as well for divergent flow over
+  hillslopes. The TopoFlow D8Global component produces grids of flow
+  codes, areas, channel widths, and channel lengths from an input
+  digital elevation model (DEM)."
 url: http://csdms.colorado.edu/wiki/Model_help:TopoFlow
 version: 3.1.0
-

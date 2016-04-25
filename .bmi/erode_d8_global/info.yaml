@@ -1,9 +1,8 @@
-author: 'Scott D. Peckham '
+author: Scott D. Peckham
 doi: 10.1594/IEDA/100174
 email: scott.peckham@colorado.edu
 license: Apache
-summary: Erode, a TopoFlow component, is a raster-based, fluvial landscape
-  evolution model.
+summary: "Erode, a part of the spatially distributed hydrologic model
+  TopoFlow, is a raster-based, fluvial landscape evolution model."
 url: http://csdms.colorado.edu/wiki/Model_help:Erode
 version: 3.1.0
-
