@@ -28,6 +28,13 @@ dt:
       min: 1
       max: 31536000
     units: s
+pixel_file:
+  description: Monitored pixel/grid file (outlets)
+  value:
+    type: file
+    default: 'off'
+    files:
+    - 'off'
 rho_snow_ptype:
   description: Density of snow
   value:
